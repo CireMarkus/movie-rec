@@ -1,0 +1,15 @@
+[{
+    "title": "It's Such a Beautiful Day",
+    "director": "Don Hertzfeldt",
+    "actors": ["Sara Cushman", "Don Hetzfeldt"],
+    "RTR": 100,
+    "genre": ["Horror", "Dark comedy", "Drama", "Animation", "Short", "Thriller", "Comedy", "Fantasy", "Mystery", "Experimental", "Science fiction"]
+},
+{
+    "title": "Moon",
+    "director": "Duncan Jones",
+    "actors": ["Sam Rockwell","Kevin Spacey","Dominique McElligott","Rosie Shaw","Adrienne Shaw","Kaya Scodelario","Benedict Wong","Matt Berry","Malcolm Stewart","Robin Chalk"],
+    "RTR": 90,
+    "genre": ["Science fiction","Drama"]
+}]
+
