@@ -11,5 +11,48 @@
     "actors": ["Sam Rockwell","Kevin Spacey","Dominique McElligott","Rosie Shaw","Adrienne Shaw","Kaya Scodelario","Benedict Wong","Matt Berry","Malcolm Stewart","Robin Chalk"],
     "RTR": 90,
     "genre": ["Science fiction","Drama"]
-}]
+},
+{
+    "title": "I think We're Alone Now",
+    "director": "Reed Morano",
+    "actors": ["Peter Dinklage","Elle Fanning","Paul Giamatti","Charlotte Gainsbourg","Elaine Apruzzese"],
+    "RTR": 63,
+    "genre": ["Science fiction","Drama","Mystery"]
+},
+{
+    "title": "I Care a Lot",
+    "director": "J Blakeson",
+    "actors": ["Peter Dinklage","Rosamund Pike","Eiza Gonzalez","Dianne Wiest","Chris Messina"],
+    "RTR": 79,
+    "genre": ["Crime","Drama","Thriller"]
+},
+{
+    "title": "Mute",
+    "director": "Duncan Jones",
+    "actors": ["Alexander Skarsgard","Paul Rudd","Justin Theroux","Seyneb Saleh","Robert Sheehan","Sam Rockwell","Jannis Niewohner","Noel Clarke","Dominic Monaghan"],
+    "RTR": 20,
+    "genre": ["Mystery","Science fiction","Thriller"]
+},
+{
+    "title": "Gattaca",
+    "director": "Andrew Niccol",
+    "actors": ["Ethan Hawke","Uma Thurman","Jude Law","Alan Arkin","Loren Dean","Gore Vidal","Tony Shalhoub","Ernest Borgnine","Blair Underwood","Xander Berkeley","Jayne Brook"],
+    "RTR": 82,
+    "genre": ["Romance","Science fiction","Thriller","Mystery"]
+},
+{
+    "title": "Lord of War",
+    "director": "Andrew Niccol",
+    "actors": ["Nicolas Cage","Bridget Moynahan","Jared Leto","Ethan Hawke","Eamonn Walker","Ian Holm","Sammi Rotibi","Tanit Phoenix","Shake Tukhmanyan","Jared Burke"],
+    "RTR": 62,
+    "genre": ["Drama","Crime","Thriller"]
+},
+{
+    "title": "Raising Arizona",
+    "director": "Joel Coen",
+    "actors": ["Nicolas Cage","Holly Hunter","Trey Wilso","John Goodman","William Forsythe","Sam McMurray","Frances McDormand","Randall Tex Cobb","T.J. Kuhn","Lynne Kitei","Peter Benedek"],
+    "RTR": 91,
+    "genre": ["Crime","Comedy"]
+}
+]
 
