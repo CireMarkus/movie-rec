@@ -4,16 +4,19 @@ class Node:
         self.left = None 
         self.right = None
     
+    def getData(self):
+        return self.data
+
     def setLeft(self,node):
         self.left = node
     
     def setRight(self,node):
         self.right = node
         
-    def getleft(self):
+    def getLeft(self):
         return self.left
     
-    def getright(self):
+    def getRight(self):
         return self.right
     
     
