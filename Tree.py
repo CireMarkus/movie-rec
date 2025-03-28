@@ -7,22 +7,13 @@ class Tree:
             self.root = Node(root)
     
    
-    #while assigned is false
-    #check and see if the new node is less than the current node
-        #check if the left child is none
-            #if none assign new node to left child and break out of loop
-            #assigned  set true
-        #else assign left child to current node
-    #else new node is greater than the current node
-        #check if the right child is none 
-            # if none assign new_node to right child and break out of loop
-            #assigned set true       
+    
     def add_node(self,node):
+        #function to add a node to the tree
         new_node =  node
         current_node = self.root
         if type(new_node) != Node:
             new_node = Node(new_node)
-        
         assigned = False
         while not assigned: 
             if new_node.getData() < current_node.getData():
@@ -38,13 +29,8 @@ class Tree:
                     current_node.setRight(new_node)
                     assigned = True
             
-
-    
-    #pop the first node and assign to current_node 
-    #check to see if the current node has any children
-    #append children to need to visit
-    #print the value of the current node
     def print_tree(self):
+        #function to traverse the tree and print the tree. 
         needtovisit = []
         needtovisit.append(self.root)
 
@@ -57,8 +43,17 @@ class Tree:
                     needtovisit.append(current_node.getRight())
             print(current_node.getData())
             
-
+    def search(self,value):
         
+        pass
+
+    def inorder_trav(self):
+        
+        pass
+    def preorder_trav(self):
+        pass
+    def postorder_trav(self):
+        pass
 
 node1 = Node(12)
 node2 = Node(14)
