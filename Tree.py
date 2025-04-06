@@ -84,26 +84,4 @@ class Tree:
         
         
         
-
-# node1 = Node(12)
-# node2 = Node(14)
-# node3 = Node(11)
-# node4 = Node(55)
-
-
-
-    
-
-tree1 = Tree()
-
-for i in range (10):
-    tree1.add_node(Node(randint(0,100)))
-
-tree1.print_tree()
-print("Post order traversal")
-tree1.revorder_trav(tree1.root)
-
-            
-            
-              
     
