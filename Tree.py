@@ -1,5 +1,4 @@
 from Node import Node
-from random import randint
 class Tree: 
     def __init__(self,root = None):
         if type(root) == Node:
