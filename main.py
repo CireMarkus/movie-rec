@@ -1,5 +1,6 @@
 import json
 from Movie import Movie
+from Node import Node
 from Tree import Tree
 
 
@@ -18,15 +19,29 @@ def populate_genre_dict():
     '''
     pass
 
-def load_movies():
+def load_movies(movie_tree):
     '''
     Load the movies from the json file into the movies tree
     '''
-    with open('movies.json', 'r') as file:
-        data = json.load(file)
     #Pull the data from the json file
-    #load the data into the movies tree
-    pass
+    with open('Movies.json', 'r') as file:
+        data = json.load(file)
+        
+    
+        #load the data into the movies tree
+        for datum in data:
+            movie = Movie(datum['title'], datum['director'])
+            
+            for i in datum['actors']:
+                movie.addActor(i)
+                
+            movie.setRTRating(datum['RTR'])
+            
+            for i in datum['genre']:
+                movie.setGenre(i)
+                
+            node = Node(movie)
+            movie_tree.add_node(node)
 
 def save_genre_dict():
     '''
@@ -43,4 +58,8 @@ def main():
     pass
 
 if __name__ == "__main__":
-    pass
+    load_movies(Movies)
+    
+    movie_list = Movies.inorder_trav(Movies.root)
+    for i in movie_list:
+        print(i.getTitle(),i.getGenre())
