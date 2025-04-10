@@ -46,4 +46,10 @@ class Movie:
     def getGenre(self):
         return self.genres
 
-
+    def __lt__ (self,other):
+        return self.title < other.getTitle()
+    
+    def __gt__ (self,other):
+        return self.title > other.getTitle()
+    def __eq__ (self,other):
+        return self.title == other
