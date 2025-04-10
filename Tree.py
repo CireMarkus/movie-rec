@@ -39,15 +39,16 @@ class Tree:
                     current_node.setRight(new_node)
                     assigned = True
             
-    def print_tree(self):
+    def return_tree_list(self):
         #function to traverse the tree and print the tree. BFS
         needtovisit = []
         needtovisit.append(self.root)
-
+        movielist = []
         while needtovisit: 
             current_node = needtovisit.pop(0)
             self.tree_trav(current_node,needtovisit)
-            print(current_node.getData())
+            movielist.append(current_node.getData())
+        return movielist
             
     def search(self,value):
         #function to search for a value in the tree
@@ -57,26 +58,29 @@ class Tree:
     
     def inorder_trav(self,current_node):
         #function to traverse the tree in order left, root,right
+        list = []
         if current_node.getLeft():
-            self.inorder_trav(current_node.getLeft())
+            list.extend(self.inorder_trav(current_node.getLeft()))
         
-        print(current_node.getData())
+        list.append(current_node.getData())
         
         if current_node.getRight():
-            self.inorder_trav(current_node.getRight())
+            list.extend(self.inorder_trav(current_node.getRight()))
+        return list
         
             
         
             
     def revorder_trav(self,current_node):
         #function to traverse the tree in reverse order right, root,left
+        list = []
         if current_node.getRight():
-            self.revorder_trav(current_node.getRight())
+            list.extend(self.revorder_trav(current_node.getRight()))
         
-        print(current_node.getData())    
+        list.append(current_node.getData())    
         
         if current_node.getLeft():
-            self.revorder_trav(current_node.getLeft())
+            list.extend(self.inorder_trav(current_node.getLeft()))
             
         
         
