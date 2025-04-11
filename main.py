@@ -13,11 +13,15 @@ def menu():
     '''
     pass
 
-def populate_genre_dict():
+def load_genres():
     '''
     Function to populate the genre dictionary with the genres of the movies.
     '''
-    pass
+    #check to see if there is a genre .json file 
+    #if there is a file load the genre dictionary from the file
+    #if there is not a file traverse the movie tree 
+        #  to populate the genre dictionary with genres and movies that fit said genre
+        # add the genres to the genere dictionary as a set
 
 def load_movies(movie_tree):
     '''
@@ -45,15 +49,19 @@ def load_movies(movie_tree):
 
 def save_genre_dict():
     '''
-    Save the genre dictionary to a json file for later use. Will also create a new file if it does not exist.
+    Save the genre dictionary to a json file for later use. 
+    Will also create a new file if it does not exist.
+    '''  
+    #try dumping the genre dictionary to a json file? 
+
+def save_movies():
     '''
-    pass
-
-def load_genre_dict():
-    #load the genre dictionary from a json file
-    pass
-
-
+    save the movies to a json file for later use.
+    Will also create a new file if it does not exist.
+    '''
+    #try dumping the movie tree to a json file?
+    
+    
 def main():
     pass
 
