@@ -18,10 +18,19 @@ def load_genres():
     Function to populate the genre dictionary with the genres of the movies.
     '''
     #check to see if there is a genre .json file 
-    #if there is a file load the genre dictionary from the file
+    try:
+        #if there is a file load the genre dictionary from the file
+        with (open('Genre.json', 'r')) as file:
+            pass
+    except FileNotFoundError:
     #if there is not a file traverse the movie tree 
         #  to populate the genre dictionary with genres and movies that fit said genre
         # add the genres to the genere dictionary as a set
+        pass
+        
+
+    
+    
 
 def load_movies(movie_tree):
     '''
@@ -71,3 +80,5 @@ if __name__ == "__main__":
     movie_list = Movies.inorder_trav(Movies.root)
     for i in movie_list:
         print(i.getTitle(),i.getGenre())
+
+    
