@@ -42,11 +42,8 @@ def load_genres():
         #catch any other exceptions and print the error message
         print(f"unexpected error: {e}, type: {type(e)}")
         raise e
-        
-
     
-    
-
+#TODO: review and rewrite the load_movies function
 def load_movies(movie_tree):
     '''
     Load the movies from the json file into the movies tree
@@ -109,10 +106,38 @@ def save_movies():
         #dump the data to the json file
         json.dump(data, file, indent=4)
         #create a list of dictionaries to save the movies
-    
-    
-def main():
+
+def add_movie():
+    '''
+    Function to add a movie to the tree.
+    '''
     pass
+
+def recommend_movie_genre():
+    '''
+    Function to recommend a movie to the user based on entered genres.
+    '''
+    pass
+
+def recommend_movie_director():
+    '''
+    Function to recommend a movie to the user based on entered directors.
+    '''
+    pass
+
+def recommend_movie_actor():
+    '''
+    Function to recommend a movie to the user based on entered actors.
+    '''
+    pass
+
+def find_movie_by_title():
+    '''
+    Function to find a movie by title.
+    '''
+    pass
+
+
 
 if __name__ == "__main__":
     load_movies(Movies)
