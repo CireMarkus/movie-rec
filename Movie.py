@@ -1,11 +1,12 @@
 class Movie:
     def __init__(self,title = None, director = None):
         self.title = title
-        self.directors = [director]
+        self.directors = []
         self.cast = []
         self.rtRating = None
         self.userRating = None
         self.genres = []
+        self.directors.append(director)
         
     def setTitle(self,title):
         self.title = title
@@ -53,3 +54,14 @@ class Movie:
         return self.title > other.getTitle()
     def __eq__ (self,other):
         return self.title == other
+    
+    def to_dict(self):
+        movie_dict = {}
+        movie_dict['title'] = self.title
+        movie_dict['director'] = self.directors
+        movie_dict['actors'] = self.cast
+        movie_dict['RTR'] = self.rtRating
+        movie_dict['userRating'] = self.userRating
+        movie_dict['genre'] = self.genres
+        
+        return movie_dict 
