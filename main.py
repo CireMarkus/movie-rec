@@ -128,7 +128,6 @@ def add_genre(movie):
 
 
 #refactor to pass null values if the user skips inputting data. 
-#TODO: add a function to parse the genres of the movie and add them to the genre dictionary
 def add_movie(movie_tree):
     '''
     Function to add a movie to the tree.
@@ -185,18 +184,19 @@ if __name__ == "__main__":
     for i in movie_list:
         print(i.getTitle(),i.getGenre())
         i.addDirector("Eric Washington")
+        i.addDirector("Yasmin Parker")
     print("\n\n\n")
     load_genres()
 
     for i in genre_dict:
         print(i, genre_dict[i])
 
-    add_movie(Movies)
-    movie_list = Movies.inorder_trav(Movies.root)
-    for i in movie_list:
-        print(i.getTitle(),i.getGenre())
-        i.addDirector("Yasmin Parker")
-    print(genre_dict, end="\n\n")
+    # add_movie(Movies)
+    # movie_list = Movies.inorder_trav(Movies.root)
+    # for i in movie_list:
+    #     print(i.getTitle(),i.getGenre())
+    #     i.addDirector("Yasmin Parker")
+    # print(genre_dict, end="\n\n")
 
     save_genre_dict()
     save_movies()

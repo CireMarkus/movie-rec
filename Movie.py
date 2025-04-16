@@ -16,14 +16,12 @@ class Movie:
         return self.title
         
     def addActor(self,actor):
-        #TODO:add ability to differentiate between lists and strings.
         self.cast.extend([actors.strip() for actors in actor.split(',') if actors not in self.cast])
     
     def getActors(self):
         return self.cast
         
     def addDirector(self, director):
-        #TODO:add ability to differentiate between lists and strings.
         if None not in self.directors:
             self.directors.extend([directors.strip() for directors in director.split(',') if directors not in self.directors])
         else:
