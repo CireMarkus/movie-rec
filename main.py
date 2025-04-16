@@ -107,11 +107,28 @@ def save_movies():
         json.dump(data, file, indent=4)
         #create a list of dictionaries to save the movies
 
-def add_movie():
+#refactor to pass null values if the user skips inputting data. 
+#TODO: add a function to parse the genres of the movie and add them to the genre dictionary
+def add_movie(movie_tree):
     '''
     Function to add a movie to the tree.
     '''
-    pass
+    new_movie = Movie()
+    title = input("Enter the title of the movie: ")
+    new_movie.setTitle(title)
+    director = input("Enter the director(s) of the movie as a comma seperated list: ")
+    new_movie.addDirector(director)
+    genres = input("Enter the genre(s) of the movie as a comma seperated list: ")
+    new_movie.setGenre(genres)
+    actors = input("Enter the actor(s) of the movie as a comma seperated list: ")
+    new_movie.addActor(actors)
+    rt_rating = input("Enter the Rotten Tomatoes rating of the movie: ")
+    new_movie.setRTRating(rt_rating)
+    user_rating = input("Enter the user rating of the movie: ")
+    new_movie.setUserRating(user_rating)
+    node = Node(new_movie)
+    movie_tree.add_node(node)
+        
 
 def recommend_movie_genre():
     '''
