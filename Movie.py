@@ -6,7 +6,8 @@ class Movie:
         self.rtRating = None
         self.userRating = None
         self.genres = []
-        self.directors.append(director.split(','))
+        if director:
+            self.directors.append(director.split(',') if director.count(',') > 0 else director)
         
     def setTitle(self,title):
         self.title = title
@@ -15,17 +16,19 @@ class Movie:
         return self.title
         
     def addActor(self,actor):
-        self.cast.append(actor)
+        #TODO:add ability to differentiate between lists and strings.
+        self.cast.extend([actors.strip() for actors in actor.split(',') if actors not in self.cast])
     
     def getActors(self):
         return self.cast
         
     def addDirector(self, director):
+        #TODO:add ability to differentiate between lists and strings.
         if None not in self.directors:
-            self.directors.append(director.split(','))
-        else: 
-            self.directors = director.split(',')
-            
+            self.directors.extend([directors.strip() for directors in director.split(',') if directors not in self.directors])
+        else:
+            self.directors=[directors.strip() for directors in director.split(',') if directors not in self.directors]
+
     def getDirectors(self):
         return self.directors
         
@@ -42,16 +45,15 @@ class Movie:
         return self.userRating
         
     def setGenre(self,genre):
+        #TODO:add ability to differentiate between lists and strings.
         if isinstance(genre, list):
             # Check if genre is a list
             # If it's not already in the list, append it
-            for g in genre:
-                if g not in self.genres:
-                    self.genres.append(g)
+            self.genres.extend(genre not in self.genres)
         elif genre not in self.genres:
             # Check if genre is a string
             # If it's not already in the list, append it
-            self.genres.append(genre)
+            self.genres.extend([genres.strip() for genres in genre.split(',') if genres not in self.genres])
         
     def getGenre(self):
         return self.genres
