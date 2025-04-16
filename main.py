@@ -107,6 +107,26 @@ def save_movies():
         json.dump(data, file, indent=4)
         #create a list of dictionaries to save the movies
 
+def add_genre(movie):
+    '''
+    Function to add a genre to the genre dictionary.
+    '''
+    genres = movie.getGenre()
+
+    #check to see if the genre is a list or a string
+    if (isinstance(genres, list)):
+        #if it is a list then add each genre to the genre dictionary
+        for genre in genres:
+            if genre not in genre_dict:
+                genre_dict[genre] = set()
+            genre_dict[genre].add(movie.getTitle())
+    else:  
+        #if it is a string then add the genre to the genre dictionary
+        if genres not in genre_dict:
+            genre_dict[genres] = set()
+        genre_dict[genres].add(movie.getTitle())
+
+
 #refactor to pass null values if the user skips inputting data. 
 #TODO: add a function to parse the genres of the movie and add them to the genre dictionary
 def add_movie(movie_tree):
@@ -126,6 +146,8 @@ def add_movie(movie_tree):
     new_movie.setRTRating(rt_rating)
     user_rating = input("Enter the user rating of the movie: ")
     new_movie.setUserRating(user_rating)
+    add_genre(new_movie)
+    #check to see if the movie is alread in the tree. 
     node = Node(new_movie)
     movie_tree.add_node(node)
         
@@ -163,9 +185,18 @@ if __name__ == "__main__":
     for i in movie_list:
         print(i.getTitle(),i.getGenre())
         i.addDirector("Eric Washington")
-    
+    print("\n\n\n")
     load_genres()
-    print(genre_dict)
+
+    for i in genre_dict:
+        print(i, genre_dict[i])
+
+    add_movie(Movies)
+    movie_list = Movies.inorder_trav(Movies.root)
+    for i in movie_list:
+        print(i.getTitle(),i.getGenre())
+        i.addDirector("Yasmin Parker")
+    print(genre_dict, end="\n\n")
 
     save_genre_dict()
     save_movies()
