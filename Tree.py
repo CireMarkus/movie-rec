@@ -19,7 +19,7 @@ class Tree:
         #function to add a node to the tree
         new_node =  node
         current_node = self.root
-        if self.root.data == None:
+        if self.root.data is None:
             self.root = new_node
             return
         if type(new_node) != Node:
@@ -52,6 +52,15 @@ class Tree:
             
     def search(self,value):
         #function to search for a value in the tree
+        current_node = self.root
+        while current_node:
+            if str(current_node.getData().getData()) == value:
+                return current_node
+            elif str(current_node.getData().getData()) < value:
+                current_node = current_node.getRight()
+            else: 
+                current_node = current_node.getLeft()
+        return None
         pass
     
     
