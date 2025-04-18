@@ -55,14 +55,17 @@ class Movie:
         
     def getGenre(self):
         return self.genres
-
+    
+    def getData(self):
+        return self.title
+    
     def __lt__ (self,other):
         return self.title < other.getTitle()
     
     def __gt__ (self,other):
         return self.title > other.getTitle()
     def __eq__ (self,other):
-        return self.title == other
+        return self.title == other.getTitle()
     
     def to_dict(self):
         movie_dict = {}
@@ -74,3 +77,4 @@ class Movie:
         movie_dict['genre'] = self.genres
         
         return movie_dict 
+   
