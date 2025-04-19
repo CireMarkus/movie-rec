@@ -1,4 +1,2 @@
-__pycache__/Movie.cpython-310.pyc
 .vscode/launch.json
-__pycache__/Node.cpython-310.pyc
-__pycache__/Tree.cpython-310.pyc
+*.pyc
