@@ -126,17 +126,6 @@ def add_genre(movie):
             genre_dict[genres] = set()
         genre_dict[genres].add(movie.getTitle())
 
-def search_movie_tree(movie_tree, title):
-    '''
-    Function to search the movie tree for a movie by title.
-    '''
-    #search the movie tree for the movie
-    node = movie_tree.search(title)
-    #if the movie is found then return the movie
-    if node:
-        return node.getData()
-    else:
-        return None
 
 #refactor to pass null values if the user skips inputting data. 
 def add_movie(movie_tree):
@@ -162,7 +151,7 @@ def add_movie(movie_tree):
     node = Node(new_movie)
     movie_tree.add_node(node)
         
-
+#TODO: Work on setting up the recommendation system 
 def recommend_movie_genre():
     '''
     Function to recommend a movie to the user based on entered genres.
@@ -175,7 +164,7 @@ def recommend_movie_genre():
     for genre in genres:
         if genre not in genre_dict:
             print(f"{genre} is not a valid genre.")
-            return
+            continue
         if len(movie_recs) == 0:
             movie_recs = genre_dict[genre]
         else:
@@ -183,24 +172,32 @@ def recommend_movie_genre():
     
     print("The following movies are recommended for you: ")
     print("--------------------------------------------------")
-    print("Title\t\t\tDirector(s)\t\tActors")
-    print("--------------------------------------------------")
-    #for movie in movie_recs:
-        
-    pass
-        
-def recommend_movie_director():
-    '''
-    Function to recommend a movie to the user based on entered directors.
-    '''
+    #loop through the movie recommendations and print the movie title, director, actors, and ratings
+    for movie in movie_recs:
+        found_movie = Movies.search(movie)
+        print(found_movie.getData().getTitle())
+        print(f"Director(s): {found_movie.getData().getDirectors()}")
+        print(f"Actor(s): {found_movie.getData().getActors()}")
+        print(f"Rotten Tomatoes rating: {found_movie.getData().getRTRating()}")
+        print(f"User rating: {found_movie.getData().getUserRating()}")
+        print(f"Genre(s): {found_movie.getData().getGenre()}")
+        print("--------------------------------------------------")
 
-    pass
+#TODO: Work on setting up the recommendation system based on the directors. 
+# def recommend_movie_director():
+#     '''
+#     Function to recommend a movie to the user based on entered directors.
+#     '''
 
-def recommend_movie_actor():
-    '''
-    Function to recommend a movie to the user based on entered actors.
-    '''
-    pass
+#     pass
+
+#TODO: Work on setting up the recommendation system based on the actors.
+# def recommend_movie_actor():
+#     '''
+#     Function to recommend a movie to the user based on entered actors.
+#     '''
+#     pass
+
 
 def find_movie_by_title(movie_tree, title):
     '''
@@ -217,7 +214,7 @@ def find_movie_by_title(movie_tree, title):
         print(f"Genre(s): {node.getData().getGenre()}")
     #if the movie is not found then return None
     else:
-        return None
+        print(f"{title} not found in the movie tree.")
     pass
 
 
@@ -235,16 +232,15 @@ if __name__ == "__main__":
 
     for i in genre_dict:
         print(i, genre_dict[i])
-
-    # add_movie(Movies)998998998079809987067987879
-    # movie_list = Movies.inorder_trav(Movies.root)
-    # for i in movie_list:
-    #     print(i.getTitle(),i.getGenre())
-    #     i.addDirector("Yasmin Parker")
-    # print(genre_dict, end="\n\n")
-
-    search_movie_tree(Movies, "The Matrix")
-    search_movie_tree(Movies, "Mute")
+    print("\n\n\n")
+    
+    
+    find_movie_by_title(Movies, "The Matrix")
+    print("\n\n")
+    find_movie_by_title(Movies, "Mute")
+    print("\n\n")
+    recommend_movie_genre()
+    print("\n\n")
 
     save_genre_dict()
     save_movies()
