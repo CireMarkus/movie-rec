@@ -11,7 +11,12 @@ def menu():
     '''
     Function to display the menu to the user.
     '''
-    pass
+    print("Welcome to the Movie Recommendation System!")
+    print("Please select an option:")
+    print("1. Add a movie")
+    print("2. Find a movie by title")
+    print("3. Recommend a movie by genre")
+    
 
 def load_genres():
     '''
@@ -126,8 +131,7 @@ def add_genre(movie):
             genre_dict[genres] = set()
         genre_dict[genres].add(movie.getTitle())
 
-
-#refactor to pass null values if the user skips inputting data. 
+#TODO:refactor to pass null values if the user skips inputting data. 
 def add_movie(movie_tree):
     '''
     Function to add a movie to the tree.
@@ -174,30 +178,8 @@ def recommend_movie_genre():
     print("--------------------------------------------------")
     #loop through the movie recommendations and print the movie title, director, actors, and ratings
     for movie in movie_recs:
-        found_movie = Movies.search(movie)
-        print(found_movie.getData().getTitle())
-        print(f"Director(s): {found_movie.getData().getDirectors()}")
-        print(f"Actor(s): {found_movie.getData().getActors()}")
-        print(f"Rotten Tomatoes rating: {found_movie.getData().getRTRating()}")
-        print(f"User rating: {found_movie.getData().getUserRating()}")
-        print(f"Genre(s): {found_movie.getData().getGenre()}")
+        find_movie_by_title(Movies, movie)
         print("--------------------------------------------------")
-
-#TODO: Work on setting up the recommendation system based on the directors. 
-# def recommend_movie_director():
-#     '''
-#     Function to recommend a movie to the user based on entered directors.
-#     '''
-
-#     pass
-
-#TODO: Work on setting up the recommendation system based on the actors.
-# def recommend_movie_actor():
-#     '''
-#     Function to recommend a movie to the user based on entered actors.
-#     '''
-#     pass
-
 
 def find_movie_by_title(movie_tree, title):
     '''
@@ -216,6 +198,23 @@ def find_movie_by_title(movie_tree, title):
     else:
         print(f"{title} not found in the movie tree.")
     pass
+#TODO: Work on setting up the recommendation system based on the directors. 
+# def recommend_movie_director():
+#     '''
+#     Function to recommend a movie to the user based on entered directors.
+#     '''
+
+#     pass
+
+#TODO: Work on setting up the recommendation system based on the actors.
+# def recommend_movie_actor():
+#     '''
+#     Function to recommend a movie to the user based on entered actors.
+#     '''
+#     pass
+
+
+
 
 
 
