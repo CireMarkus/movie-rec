@@ -16,6 +16,7 @@ def menu():
     print("1. Add a movie")
     print("2. Find a movie by title")
     print("3. Recommend a movie by genre")
+    #TODO: complete the menu
     
 
 def load_genres():
@@ -197,7 +198,7 @@ def find_movie_by_title(movie_tree, title):
     #if the movie is not found then return None
     else:
         print(f"{title} not found in the movie tree.")
-    pass
+    
 #TODO: Work on setting up the recommendation system based on the directors. 
 # def recommend_movie_director():
 #     '''
