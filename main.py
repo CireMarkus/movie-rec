@@ -12,12 +12,41 @@ def menu():
     Function to display the menu to the user.
     '''
     print("Welcome to the Movie Recommendation System!")
-    print("Please select an option:")
-    print("1. Add a movie")
-    print("2. Find a movie by title")
-    print("3. Recommend a movie by genre")
-    #TODO: complete the menu
-    
+    while True:
+        print("Please select an option:")
+        print("1. Add a movie")
+        print("2. Find a movie by title")
+        print("3. Recommend a movie by genre")
+        print("4. Rate a movie")
+        print("5. Print all movies")
+        print("6. Exit")
+        print("--------------------------------------------------")
+        
+        user_input = input("Enter your choice: ")
+        
+        if user_input == '1':
+            add_movie(Movies)
+        elif user_input == '2':
+            title = input("Enter the title of the movie: ")
+            find_movie_by_title(Movies, title)
+        elif user_input == '3':
+            recommend_movie_genre()
+        elif user_input == '4':
+            rate_movie()
+        elif user_input == '5':
+            movie_list = Movies.inorder_trav(Movies.root)
+            print("Movies in the system:")
+            print("--------------------------------------------------")
+            for movie in movie_list:
+                print(f"Title: {movie.getTitle()}")
+                print("--------------------------------------------------")
+        elif user_input == '6':
+            print("Thank you for using the Movie Recommendation System!")
+            save_movies()
+            save_genre_dict()
+            exit()
+        else:
+            print("Invalid choice. Please try again.")
 
 def load_genres():
     '''
@@ -198,7 +227,22 @@ def find_movie_by_title(movie_tree, title):
     #if the movie is not found then return None
     else:
         print(f"{title} not found in the movie tree.")
-    
+
+def rate_movie():
+    '''
+    Function to rate a movie.
+    '''
+    title = input("Enter the title of the movie: ")
+    node = Movies.search(title)
+    #if the movie is found then return the movie
+    if node:
+        rating = input("Enter the rating of the movie: ")
+        node.getData().setUserRating(rating)
+        print(f"{title} has been rated {rating}.")
+    #if the movie is not found then return None
+    else:
+        print(f"{title} not found in the movie tree.")
+
 #TODO: Work on setting up the recommendation system based on the directors. 
 # def recommend_movie_director():
 #     '''
