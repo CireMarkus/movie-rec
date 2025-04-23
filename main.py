@@ -12,6 +12,8 @@ def menu():
     Function to display the menu to the user.
     '''
     print("Welcome to the Movie Recommendation System!")
+    load_movies(Movies)
+    load_genres()
     while True:
         print("Please select an option:")
         print("1. Add a movie")
@@ -264,28 +266,29 @@ def rate_movie():
 
 
 if __name__ == "__main__":
-    load_movies(Movies)
+    # load_movies(Movies)
     
-    movie_list = Movies.inorder_trav(Movies.root)
-    for i in movie_list:
-        print(i.getTitle(),i.getGenre())
-        i.addDirector("Eric Washington")
-        i.addDirector("Yasmin Parker")
-    print("\n\n\n")
-    load_genres()
+    # movie_list = Movies.inorder_trav(Movies.root)
+    # for i in movie_list:
+    #     print(i.getTitle(),i.getGenre())
+    #     i.addDirector("Eric Washington")
+    #     i.addDirector("Yasmin Parker")
+    # print("\n\n\n")
+    # load_genres()
 
-    for i in genre_dict:
-        print(i, genre_dict[i])
-    print("\n\n\n")
+    # for i in genre_dict:
+    #     print(i, genre_dict[i])
+    # print("\n\n\n")
     
     
-    find_movie_by_title(Movies, "The Matrix")
-    print("\n\n")
-    find_movie_by_title(Movies, "Mute")
-    print("\n\n")
-    recommend_movie_genre()
-    print("\n\n")
+    # find_movie_by_title(Movies, "The Matrix")
+    # print("\n\n")
+    # find_movie_by_title(Movies, "Mute")
+    # print("\n\n")
+    # recommend_movie_genre()
+    # print("\n\n")
 
-    save_genre_dict()
-    save_movies()
+    # save_genre_dict()
+    # save_movies()
     
+    menu()
