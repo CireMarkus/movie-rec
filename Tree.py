@@ -61,7 +61,6 @@ class Tree:
             else: 
                 current_node = current_node.getLeft()
         return None
-        pass
     
     
     
